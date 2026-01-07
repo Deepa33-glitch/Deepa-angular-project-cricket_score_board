@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <div class="container mt-4 p-4 border rounded bg-light shadow">
+        <h2 class="text-center text-primary mb-4">Live Score Card</h2>
+
+        <form #scoreForm="ngForm" class="row g-3">
+            <!-- Input Fields -->
+            <div>
+                <div class="col-md-4">
+                    <label class="form-label">Overs </label>
+                    <input type="number" name="overs" [(ngModel)]="overs" class="form-control" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Balls Left</label>
+                    <input type="number" name="balls" [(ngModel)]="balls" class="form-control" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Wickets </label>
+                    <input type="number" name="wickets" [(ngModel)]="wickets" class="form-control" readonly>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-4">
+                    <label class="form-label text-danger fw-bold">Set Target</label>
+                    <input type="number" name="target" [(ngModel)]="target" (ngModelChange)="updateNeed()" class="form-control border-danger">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Current Runs</label>
+                    <input type="number" name="currentRuns" [(ngModel)]="currentRuns" class="form-control" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label text-success fw-bold">Runs Needed</label>
+                    <input type="number" name="need" [(ngModel)]="need" class="form-control border-success" readonly>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <h3> Run Section</h3>
+
+            <div class="col-12 mt-4 d-flex justify-content-center gap-2">
+                <button type="button" class="btn btn-outline-dark custom-btn" (click)="handleRunClick(1)">1 Run</button>
+                <button type="button" class="btn btn-outline-dark custom-btn" (click)="handleRunClick(2)">2 Runs</button>
+                <button type="button" class="btn btn-outline-dark custom-btn" (click)="handleRunClick(3)">3 Runs</button>
+                <button type="button" class="btn btn-outline-primary custom-btn" (click)="handleRunClick(4)">4 (Boundary)</button>
+                <button type="button" class="btn btn-outline-success custom-btn" (click)="handleRunClick(6)">6 (Six)</button>
+                <button type="button" class="btn btn-outline-secondary custom-btn" (click)="handleRunClick(0)">Dot Ball</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

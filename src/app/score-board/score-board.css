@@ -1,0 +1,33 @@
+.custom-btn {
+    min-width: 100px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+.custom-btn:hover {
+    transform: scale(1.05);
+}
+input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}   
+
+body {
+    background-image: url('https://as2.ftcdn.net/v2/jpg/07/13/36/81/1000_F_713368135_44mzFZZBzydbWJ1W4LK1iRDwZTObqyYl.jpg');
+    height: 60vh;
+    width: 150vh;
+    display: grid;
+    place-items: center;
+}
+
+*{
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    float: right;
+    width: 45%;
+    margin: 3% 0 0 0
+}
